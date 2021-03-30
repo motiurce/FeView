@@ -4,11 +4,15 @@
 # FeView
 A TOOL FOR FINITE ELEMENT MODEL (OPENSEEES) VISUALIZATION
 
-<img align="right" src="https://github.com/motiurce/FeView/blob/c1d7364a1052ab7f42d8492f5a487f1d68180255/20_story_building.png" width=150px>
+<img align="right" src="https://github.com/motiurce/FeView/blob/5e5c3ab4463bce8f387f22f3e7d1034463a15923/FeView_LogoL.png" width=150px>
 FeView (v1.0) Interface introduces a graphical user interface (GUI) for the popular open source finite element software OpenSees.
 
 ## Interactive Interface:
 
 <p align="center">
-<img src=https://www.kim2kie.com/3_ach/FeView/FeView_webpage/image/drex_feview__v1_0__custom.png width=800px>
+<img src=https://github.com/motiurce/FeView/blob/5e5c3ab4463bce8f387f22f3e7d1034463a15923/20_story_building.png width=800px>
+</p>
+
+<p align="center">
+<img src=https://github.com/motiurce/FeView/blob/5e5c3ab4463bce8f387f22f3e7d1034463a15923/Soil_Foundation_Brick_Element.png width=800px>
 </p>
