@@ -41,9 +41,9 @@ Firstly go to FeView folde>>
 ```
 cd FeView
 ```
-Run FeVie
+Run FeView
 ```
 Python FeView.py
 ```
-## Fore more detauils visit>>
+## Fore more detauils visit>> Manual>> Examples>>
 https://www.kim2kie.com/3_ach/FeView/FeView_webpage/FeView.php
