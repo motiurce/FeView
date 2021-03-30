@@ -12,7 +12,9 @@ FeView (v1.0) Interface introduces a graphical user interface (GUI) for the popu
 <p align="center">
 <img src=https://github.com/motiurce/FeView/blob/5e5c3ab4463bce8f387f22f3e7d1034463a15923/20_story_building.png width=800px>
 </p>
+<p align="center">
 Render view of a 20 story building
+ </p>
 
 
 <p align="center">
