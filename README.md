@@ -45,5 +45,5 @@ Run FeVie
 ```
 Python FeView.py
 ```
-## Fore more detauils vsit>>
+## Fore more detauils visit>>
 https://www.kim2kie.com/3_ach/FeView/FeView_webpage/FeView.php
