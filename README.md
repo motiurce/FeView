@@ -4,7 +4,7 @@
 # FeView
 A TOOL FOR FINITE ELEMENT MODEL (OPENSEEES) VISUALIZATION
 
-<img align="right" src="https://github.com/motiurce/FeView/blob/5e5c3ab4463bce8f387f22f3e7d1034463a15923/FeView_LogoL.png" width=150px>
+<img align="right" src="https://github.com/motiurce/FeView/blob/5e5c3ab4463bce8f387f22f3e7d1034463a15923/FeView_LogoL.png" width=100px>
 FeView (v1.0) Interface introduces a graphical user interface (GUI) for the popular open source finite element software OpenSees.
 
 ## Interactive Interface:
