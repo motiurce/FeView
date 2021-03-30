@@ -37,7 +37,7 @@ Python 3.7
 pip install -r requirements.txt
 ```
 ## Running FeView
-Firstly go to FeView folde>>
+Firstly go to FeView folder >>
 ```
 cd FeView
 ```
