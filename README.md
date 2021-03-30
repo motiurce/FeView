@@ -36,4 +36,14 @@ Python 3.7
 ```
 pip install -r requirements.txt
 ```
-
+## Running FeView
+Firstly go to FeView folde>>
+```
+cd FeView
+```
+Run FeVie
+```
+Python FeView.py
+```
+## Fore more detauils vsit>>
+https://www.kim2kie.com/3_ach/FeView/FeView_webpage/FeView.php
