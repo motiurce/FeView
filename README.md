@@ -21,3 +21,19 @@ Render view of a 20 story building
 <p align="center">
 Deformation shape with undirom wire mesh view
  </p>
+ 
+## Programming Language
+Python 3.7
+## Dependencies and its insrallation:
+1. PyQt5==5.15.0
+2. PyVista==0.25.3 & pyvistaqt==0.1.1
+3. numpy==1.18.0
+4. pandas==1.0.5
+5.  matplotlib==3.4.0
+6. xlwt==1.3.0
+7. eqsig==1.2.0
+### Install dependencies by the folloing command
+```
+pip install -r requirements.txt
+```
+
