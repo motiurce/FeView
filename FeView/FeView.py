@@ -12,7 +12,7 @@ from read_outfiles import *
 from utilities import *
 import matplotlib as mpl
 import eqsig.single
-
+from RS import*
 import pyvista as pv
 import numpy as np
 import pandas as pd
