@@ -3362,10 +3362,7 @@ class response_dynamic(QtWidgets.QMainWindow):
             index_cb = self.cb_resp_nodenumber_rs.currentIndex()
             intrl_disp_dynamic = np.linspace(0, (len(main.outdispFile[:, 1]) - main.step_statics - 1),
                                              (len(main.outdispFile[:, 1]) - main.step_statics))
-            dt=float(self.tb_dt_rs.text())
-            damping=float(self.tb_damping_rs.text())
-            periods = np.linspace(0.01, 4, 400)
-            fz = np.divide(1.0, periods)  # (np.array(periods))
+
             zero_2d_dynamic = np.repeat(0, (len(intrl_disp_dynamic)))
             self.RespspectraWidget.canvas_rs.axes_rs.clear()
 
@@ -3403,13 +3400,11 @@ class response_dynamic(QtWidgets.QMainWindow):
                     res_dynamic_rs = (main.outaccFile[main.step_statics:len(main.outdispFile[:, 1]), (3*index_cb+3)])
                 elif ndm_v(main.fileName) == 2:
                     res_dynamic_rs = zero_2d_dynamic
-            record = eqsig.AccSignal(res_dynamic_rs, dt)
-            record.generate_response_spectrum(response_times=periods, xi=damping)
-            PSa = record.s_a
-            PSv = record.s_v
-            Sd = record.s_d
+            Tn,fz, Sd,SV,SA,PSa,PSv=resp_spectra(res_dynamic_rs, float(self.tb_dt_rs.text()), T_min=0.01, T_max=4, n_pts=200, Xi=float(self.tb_damping_rs.text()))
+
+
             if self.rbn__T.isChecked()==True:
-                x_values=periods
+                x_values=Tn
                 self.RespspectraWidget.canvas_rs.axes_rs.set_xlabel('Period (s)',
                                                                              fontname="Times New Roman", size=10)
             elif self.rbn_F.isChecked()==True:
