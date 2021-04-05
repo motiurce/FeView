@@ -53,7 +53,7 @@ Support all types of material available in OpenSees (Version 3.2.1 64-Bit)
 2. Modal Analysis
 3. Transient analysis 
 ### Element type: Current version of FeView support 46 types of elements as listed
-Beam-Column Elements >	
+#### Beam-Column Elements >	
 1. elasticBeamColumn
 2. ElasticTimoshenkoBeam
 3. forceBeamColumn
@@ -61,7 +61,7 @@ Beam-Column Elements >
 5. dispBeamColumnInt
 6. MVLEM
 7. SFI_MVLEM
-Quadrilateral Elements >	
+#### Quadrilateral Elements >	
 1. quad
 2. ShellMITC4
 3. ShellDKGQ
@@ -72,7 +72,7 @@ Quadrilateral Elements >
 8. SSPquad
 9. VS3D4
 10. AV3D4
-Bearing Elements	> 
+#### Bearing Elements	> 
 1. elastomericBearingPlasticity
 2. elastomericBearingBoucWen
 3. flatSliderBearing, 
@@ -87,7 +87,7 @@ Bearing Elements	>
 12. HDR
 13. RJWatsonEqsBearing
 14. FPBearingPTV
-Brick Elements >	
+#### Brick Elements >	
 1. stdBrick
 2. bbarBrick
 3. SSPbrick
@@ -95,17 +95,17 @@ Brick Elements >
 5. AC3D8
 6. ASI3D8
 7. bbarBrickWithSensitivity
-Triangular Elements >
+#### Triangular Elements >
 1. Tri31
 2. ShellDKGT
 3. ShellNLDKGT
-Cable Elements >
+#### Cable Elements >
 1. CatenaryCable
-Tetrahedron Elements >
+#### Tetrahedron Elements >
 1. FourNodeTetrahedron
-Link Elements >	
+#### Link Elements >	
 1. twoNodeLink
-Truss Element >	
+#### Truss Element >	
 1. truss
 2. corotTruss
 Note: As FeView is case sensitive user need to write exact element name as listed above.
