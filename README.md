@@ -53,18 +53,87 @@ Support all types of material available in OpenSees (Version 3.2.1 64-Bit)
 2. Modal Analysis
 3. Transient analysis 
 ### Element type: Current version of FeView support 46 types of elements as listed
-Beam-Column Elements >	1. elasticBeamColumn, 2. ElasticTimoshenkoBeam, 3. forceBeamColumn, 4. dispBeamColumn, 5. dispBeamColumnInt, 6. MVLEM, 7. SFI_MVLEM
-Quadrilateral Elements >	1. quad, 2. ShellMITC4, 3. ShellDKGQ, 4. ShellNLDKGQ, 5. ShellNL, 6. bbarQuad, 7. enhancedQuad, 8. SSPquad, 9. VS3D4, 10. AV3D4
-Bearing Elements	> 1. elastomericBearingPlasticity, 2. elastomericBearingBoucWen, 3. flatSliderBearing, 
-4. singleFPBearing, 5. TFP, 6. TripleFrictionPendulum, 7. multipleShearSpring, 8. KikuchiBearing, 9. YamamotoBiaxialHDR, 10. ElastomericX, 11. LeadRubberX, 12. HDR
-13. RJWatsonEqsBearing, 14. FPBearingPTV
-Brick Elements >	1. stdBrick, 2. bbarBrick, 3. SSPbrick, 4. brickUP, 5. AC3D8, 6. ASI3D8, 7. bbarBrickWithSensitivity
-Triangular Elements >	1. Tri31, 2. ShellDKGT, 3. ShellNLDKGT
-Cable Elements >	1. CatenaryCable
-Tetrahedron Elements >	1. FourNodeTetrahedron
-Link Elements >	1. twoNodeLink
-Truss Element >	1. truss, 2. corotTruss
+Beam-Column Elements >	
+1. elasticBeamColumn
+2. ElasticTimoshenkoBeam
+3. forceBeamColumn
+4. dispBeamColumn
+5. dispBeamColumnInt
+6. MVLEM
+7. SFI_MVLEM
+Quadrilateral Elements >	
+1. quad
+2. ShellMITC4
+3. ShellDKGQ
+4. ShellNLDKGQ
+5. ShellNL
+6. bbarQuad
+7. enhancedQuad
+8. SSPquad
+9. VS3D4
+10. AV3D4
+Bearing Elements	> 
+1. elastomericBearingPlasticity
+2. elastomericBearingBoucWen
+3. flatSliderBearing, 
+4. singleFPBearing
+5. TFP
+6. TripleFrictionPendulum
+7. multipleShearSpring
+8. KikuchiBearing
+9. YamamotoBiaxialHDR
+10. ElastomericX
+11. LeadRubberX
+12. HDR
+13. RJWatsonEqsBearing
+14. FPBearingPTV
+Brick Elements >	
+1. stdBrick
+2. bbarBrick
+3. SSPbrick
+4. brickUP
+5. AC3D8
+6. ASI3D8
+7. bbarBrickWithSensitivity
+Triangular Elements >
+1. Tri31
+2. ShellDKGT
+3. ShellNLDKGT
+Cable Elements >
+1. CatenaryCable
+Tetrahedron Elements >
+1. FourNodeTetrahedron
+Link Elements >	
+1. twoNodeLink
+Truss Element >	
+1. truss
+2. corotTruss
 Note: As FeView is case sensitive user need to write exact element name as listed above.
+### Recorder setting:
+#### For 2D problem
+```
+recorder Node -file Node_displacements.out -time -nodeRange $1stNode $lastNode -dof 1 2 disp
+recorder Node -file Node_rotations.out -time -nodeRange $1stNode $lastNode -dof 3 disp
+recorder Node -file Node_forceReactions.out -time -nodeRange $1stNode $lastNode -dof 1 2 reaction
+recorder Node -file Node_momentReactions.out -time -nodeRange $1stNode $lastNode -dof 3 reaction
+recorder Node -file Node_accelerations.out -time -nodeRange $1stNode $lastNode -dof 1 2 accel
+recorder Node -file Node_velocities.out -time -nodeRange $1stNode $lastNode -dof 1 2 vel
+```
+#### For 3D problem
+```
+recorder Node -file Node_displacements.out -time -nodeRange $1stNode $lastNode -dof 1 2 3 disp
+recorder Node -file Node_rotations.out -time -nodeRange $1stNode $lastNode -dof 4 5 6 disp
+recorder Node -file Node_forceReactions.out -time -nodeRange $1stNode $lastNode -dof 1 2 3 reaction
+recorder Node -file Node_momentReactions.out -time -nodeRange $1stNode $lastNode -dof 4 5 6 reaction
+recorder Node -file Node_accelerations.out -time -nodeRange $1stNode $lastNode-dof 1 2 3 accel
+recorder Node -file Node_velocities.out -time -nodeRange $1stNode $lastNode -dof 1 2 3 vel
+```
+Note: Current versin of FeView support only nodal responses. User need to define recorder as in above. Just replace $1stNode and $lastNode node as your pboblem.
+### Mode number:
+For eigenvalue analysis as prerequisit of FeView set mode number as>
+```
+set numModes 3
+```
 
 ## Fore more detauils visit>> Manual>> Examples>>
 https://www.kim2kie.com/3_ach/FeView/FeView_webpage/FeView.php
