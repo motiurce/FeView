@@ -108,7 +108,7 @@ Support all types of material available in OpenSees (Version 3.2.1 64-Bit)
 #### Truss Element >	
 1. truss
 2. corotTruss
-Note: As FeView is case sensitive user need to write exact element name as listed above.
+#### Note: As FeView is case sensitive user need to write exact element name as listed above.
 ### Recorder setting:
 #### For 2D problem
 ```
