@@ -27,7 +27,7 @@ Python 3.7
 ## Dependencies and its insrallation:
 1. PyQt5==5.15.0
 2. PyVista==0.25.3 & pyvistaqt==0.1.1
-3. numpy==1.18.0
+3. numpy
 4. pandas==1.0.5
 5.  matplotlib==3.2.0
 6. xlwt==1.3.0
