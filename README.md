@@ -31,7 +31,6 @@ Python 3.7
 4. pandas==1.0.5
 5.  matplotlib==3.2.0
 6. xlwt==1.3.0
-7. eqsig==1.2.0
 ### Install dependencies by the folloing command
 ```
 pip install -r requirements.txt
