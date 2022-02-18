@@ -32,7 +32,7 @@ class FeViewMain(QtWidgets.QMainWindow):
         vlayout.setContentsMargins(0, 0, 0, 0)
         # add some tool bar
         self.btn_tool_openTCL = QAction(QIcon('UI/icon/Open.png'),'Open TCL File', self)
-        self.btn_tool_editTCL = QAction(QIcon('UI/icon/edit.png'),'Edit TCL File with CypressEditor', self)
+        self.btn_tool_editTCL = QAction(QIcon('UI/icon/edit.png'),'Edit TCL File', self)
         self.btn_tool_run_OS = QAction(QIcon('UI/icon/run.png'),'run TCL file with OpenSees', self)
         self.btn_iso = QAction(QIcon('UI/icon/iso.png'),'View isometric', self)
         self.btn_iso.setCheckable(True) # toolbar button checkable
@@ -1450,7 +1450,7 @@ class FeViewMain(QtWidgets.QMainWindow):
     # function to open input file with editor
     def edit_TCL(self):
         try:
-            programName = "CypressEditor/CypressEditor.exe"
+            programName = "notepad.exe"
             sp.Popen([programName, self.fileName],cwd=self.file_path)
         except:
             QMessageBox.critical(self, "Error", "Please check OpenSees TCL input file")
