@@ -433,7 +433,7 @@ padding: 0px;</string>
               </size>
              </property>
              <property name="toolTip">
-              <string>Respnse Plot </string>
+              <string>Response Plot </string>
              </property>
              <property name="layoutDirection">
               <enum>Qt::RightToLeft</enum>
@@ -687,7 +687,7 @@ padding: 0px;</string>
               </size>
              </property>
              <property name="toolTip">
-              <string>Respnse Plot </string>
+              <string>Response Plot </string>
              </property>
              <property name="layoutDirection">
               <enum>Qt::RightToLeft</enum>
