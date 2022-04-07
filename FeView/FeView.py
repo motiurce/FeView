@@ -197,7 +197,7 @@ class FeViewMain(QtWidgets.QMainWindow):
         self.actionView_load.triggered.connect(self.load_setting_arrow)
 
         self.reportEdit.keyReleaseEvent = self.handleKeyRelease
-        self.addInfoText("Opend tcl file")
+        self.addInfoText("Opened tcl file")
 
         self.prgb = QProgressBar(self)
         self.statusBar().addPermanentWidget(self.prgb)

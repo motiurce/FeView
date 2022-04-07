@@ -31,7 +31,7 @@ Python 3.7
 4. pandas==1.0.5
 5.  matplotlib==3.2.0
 6. xlwt==1.3.0
-### Install dependencies by the folloing command
+### Install dependencies via the following command
 ```
 pip install -r requirements.txt
 ```
@@ -127,9 +127,9 @@ recorder Node -file Node_momentReactions.out -time -nodeRange $1stNode $lastNode
 recorder Node -file Node_accelerations.out -time -nodeRange $1stNode $lastNode-dof 1 2 3 accel
 recorder Node -file Node_velocities.out -time -nodeRange $1stNode $lastNode -dof 1 2 3 vel
 ```
-Note: Current versin of FeView support only nodal responses. User need to define recorder as in above. Just replace $1stNode and $lastNode node as your pboblem.
+Note: Current version of FeView supports only nodal responses. User needs to define recorder as in above. Just replace `$1stNode` and `$lastNode` node as your problem.
 ### Mode number:
-For eigenvalue analysis as prerequisit of FeView set mode number as>
+For eigenvalue analysis as prerequisite of FeView set mode number as>
 ```
 set numModes 3
 ```
