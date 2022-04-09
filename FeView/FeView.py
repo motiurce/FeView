@@ -5,6 +5,7 @@ import sys, os, time
 from webbrowser import open_new_tab
 import xlwt
 import subprocess as sp
+from UI import resources_py
 from plotting import *
 from mode import *
 from recorder import *
@@ -31,88 +32,9 @@ class FeViewMain(QtWidgets.QMainWindow):
         self.setCentralWidget(self.frame)
         vlayout.setContentsMargins(0, 0, 0, 0)
         # add some tool bar
-        self.btn_tool_openTCL = QAction(QIcon('UI/icon/Open.png'),'Open TCL File', self)
-        self.btn_tool_editTCL = QAction(QIcon('UI/icon/edit.png'),'Edit TCL File', self)
-        self.btn_tool_run_OS = QAction(QIcon('UI/icon/run.png'),'run TCL file with OpenSees', self)
-        self.btn_iso = QAction(QIcon('UI/icon/iso.png'),'View isometric', self)
-        self.btn_iso.setCheckable(True) # toolbar button checkable
-        self.btn_xy_zpluss = QAction(QIcon('UI/icon/xy_zpluss.png'), 'View xy_zpluss', self)
-        self.btn_xy_zpluss.setCheckable(True)
-        self.btn_xy_zminus = QAction(QIcon('UI/icon/xy_zminus.png'), 'View xy_zminus', self)
-        self.btn_xy_zminus.setCheckable(True)
-        self.btn_xz_ypluss = QAction(QIcon('UI/icon/xz_ypluss.png'), 'View xz_ypluss', self)
-        self.btn_xz_ypluss.setCheckable(True)
-        self.btn_xz_yminus = QAction(QIcon('UI/icon/xz_yminus.png'), 'View xz_yminus', self)
-        self.btn_xz_yminus.setCheckable(True)
-        self.btn_yz_xpluss = QAction(QIcon('UI/icon/yz_xpluss.png'), 'View yz_xpluss', self)
-        self.btn_yz_xpluss.setCheckable(True)
-        self.btn_yz_xminus = QAction(QIcon('UI/icon/yz_xminus.png'), 'View yz_xminus', self)
-        self.btn_yz_xminus.setCheckable(True)
-        self.btn_node_label = QAction(QIcon('UI/icon/nl.png'), 'View Node Label', self)
-        self.btn_node_label.setCheckable(True)
-        self.btn_node_cord = QAction(QIcon('UI/icon/nc.png'), 'View Node Co-ordinate', self)
-        self.btn_node_cord.setCheckable(True)
-        self.btn_load = QAction(QIcon('UI/icon/load.png'), 'View Point Load', self)
-        self.btn_load.setCheckable(True)
-        self.btn_color_plot_background= QAction(QIcon('UI/icon/color_plot_background.png'), 'Change Plot Background Color', self)
-        self.btn_color_gui = QAction(QIcon('UI/icon/color_gui.png'), 'Change Theme Color', self)
-        self.btn_font = QAction(QIcon('UI/icon/font.png'), 'Change Font Style', self)
-        self.btn_plot_image = QAction(QIcon('UI/icon/plot_image.png'), 'Save Plot as Image', self)
-        self.btn_plot_image_wb = QAction(QIcon('UI/icon/plot_image_wb.png'), 'Save Plot as Image with White Background', self)
-        self.btn_calc = QAction(QIcon('UI/icon/calculator.png'), 'Calculator', self)
-        self.btn_minumize = QAction(QIcon('UI/icon/minimize.png'), 'Mimimize the Window', self)
-        self.btn_maximize = QAction(QIcon('UI/icon/maximize.png'), 'Maximize the Window', self)
-        self.btn_full_s = QAction(QIcon('UI/icon/full_s.png'), 'Fullscreen', self)
-        self.btn_center = QAction(QIcon('UI/icon/center.png'), 'Center', self)
-        self.btn_min_s = QAction(QIcon('UI/icon/min.png'), 'Minimum Window Size', self)
-        self.btn_max_s = QAction(QIcon('UI/icon/max.png'), 'Maximum Window Size', self)
-        self.btn_restore = QAction(QIcon('UI/icon/rest_w.png'), 'Restore Window', self)
-        self.btn_help = QAction(QIcon('UI/icon/help.png'), 'Help', self)
-        self.btn_about = QAction(QIcon('UI/icon/info.png'), 'Info', self)
-        self.btn_close = QAction(QIcon('UI/icon/close.png'), 'Exir', self)
-        toolbar = self.addToolBar('Exit')
-        toolbar.addAction(self.btn_tool_openTCL)
-        toolbar.addAction(self.btn_tool_editTCL)
-        toolbar.addAction(self.btn_tool_run_OS)
-        toolbar.addSeparator()
-        toolbar.addAction(self.btn_iso)
-        toolbar.addAction(self.btn_xy_zpluss)
-        toolbar.addAction(self.btn_xy_zminus)
-        toolbar.addAction(self.btn_xz_ypluss)
-        toolbar.addAction(self.btn_xz_yminus)
-        toolbar.addAction(self.btn_yz_xpluss)
-        toolbar.addAction(self.btn_yz_xminus)
-        toolbar.addSeparator()# add separator
-        toolbar.addAction(self.btn_node_label)
-        toolbar.addAction(self.btn_node_cord)
-        toolbar.addAction(self.btn_load)
-        toolbar.addSeparator()
-        toolbar.addAction(self.btn_color_plot_background)
-        toolbar.addAction(self.btn_color_gui)
-        toolbar.addAction(self.btn_font)
-        toolbar.addSeparator()
-        toolbar.addAction(self.btn_plot_image)
-        toolbar.addAction(self.btn_plot_image_wb)
-        toolbar.addAction(self.btn_calc)
-        toolbar.addSeparator()
-        toolbar.addAction(self.btn_minumize)
-        toolbar.addAction(self.btn_maximize)
-        toolbar.addAction(self.btn_full_s)
-        toolbar.addAction(self.btn_center)
-        toolbar.addAction(self.btn_min_s)
-        toolbar.addAction(self.btn_max_s)
-        toolbar.addAction(self.btn_restore)
-        toolbar.addSeparator()
-        toolbar.addAction(self.btn_help)
-        toolbar.addAction(self.btn_about)
-        toolbar.addAction(self.btn_close)
-        toolbar.addSeparator()
+        
         # margin & layout setting for toolbar
-        toolbar.setContentsMargins(0, 0, 0, 0)
-        toolbar.layout().setSpacing(0)
-        toolbar.layout().setContentsMargins(0, 0, 0, 0)
         self.btn_tool_openTCL.triggered.connect(self.openTCL) # call function for 'Open TCL file' toolbar button
-        self.actionOpen.triggered.connect(self.openTCL) # call function for 'Open TCL file' main manu button
         self.btn_apply_static.clicked.connect(self.DispStatic)
         self.actionApply_Static.triggered.connect(self.DispStatic)
 
@@ -125,9 +47,7 @@ class FeViewMain(QtWidgets.QMainWindow):
         self.btn_response_dynamic.clicked.connect(self.res_dynamic)
         self.actionShow_Response_dynamic.triggered.connect(self.res_dynamic)
         self.btn_tool_editTCL.triggered.connect(self.edit_TCL)
-        self.actionEdit.triggered.connect(self.edit_TCL)
         self.btn_tool_run_OS.triggered.connect(self.runOS)
-        self.actionRun_OpenSees.triggered.connect(self.runOS)
         self.btn_iso.triggered.connect(self.iso)
         self.btn_xy_zpluss.triggered.connect(self.xy_zpluss)
         self.btn_xy_zminus.triggered.connect(self.xy_zminus)
@@ -135,36 +55,22 @@ class FeViewMain(QtWidgets.QMainWindow):
         self.btn_xz_yminus.triggered.connect(self.xz_yminus)
         self.btn_yz_xpluss.triggered.connect(self.yz_xpluss)
         self.btn_yz_xminus.triggered.connect(self.yz_xminus)
-        self.actionFeView.triggered.connect(self.about_feview)
         self.btn_about.triggered.connect(self.about_feview)
-        self.actionPlot_Background_Color.triggered.connect(self.Plot_Background_Color)
         self.btn_color_plot_background.triggered.connect(self.Plot_Background_Color)
-        self.actionGUI_Font.triggered.connect(self.GUI_Font)
         self.btn_font.triggered.connect(self.GUI_Font)
-        self.actionTheme_Color.triggered.connect(self.gui_color)
         self.btn_color_gui.triggered.connect(self.gui_color)
         self.btn_plot_image.triggered.connect(self.savePlot)
-        self.actionWith_background.triggered.connect(self.savePlot)
         self.btn_plot_image_wb.triggered.connect(self.savePlot_wb)
-        self.actionWhite_Background.triggered.connect(self.savePlot_wb)
         self.btn_calc.triggered.connect(self.calculator)
-        self.actionMinimize.triggered.connect(lambda: self.showMinimized())
         self.btn_minumize.triggered.connect(lambda: self.showMinimized())
-        self.actionMaximize.triggered.connect(lambda: self.showMaximized())
         self.btn_maximize.triggered.connect(lambda: self.showMaximized())
-        self.actionFull_Screen.triggered.connect(lambda: self.showFullScreen())
         self.btn_full_s.triggered.connect(lambda: self.showFullScreen())
-        self.actionCenter.triggered.connect(lambda: self.center())
         self.btn_center.triggered.connect(lambda: self.center())
-        self.actionMinimum_Size.triggered.connect(lambda: self.resize(self.minimumSize()))
         self.btn_min_s.triggered.connect(lambda: self.resize(self.minimumSize()))
-        self.actionMaximum_Size.triggered.connect(lambda: self.resize(self.maximumSize()))
         self.btn_max_s.triggered.connect(lambda: self.resize(self.maximumSize()))
 
 
-        self.actionRestore.triggered.connect(lambda: self.showNormal())
         self.btn_restore.triggered.connect(lambda: self.showNormal())
-        self.actionSSL.triggered.connect(lambda: open_new_tab('Help\FeView_Help.chm'))
         self.btn_help.triggered.connect(lambda: open_new_tab('Help\FeView_Help.chm'))
 
         self.actionOpenSees.triggered.connect(lambda: open_new_tab('https://opensees.berkeley.edu'))
@@ -172,14 +78,10 @@ class FeViewMain(QtWidgets.QMainWindow):
         self.actionFeView_Website.triggered.connect(lambda: open_new_tab('http://www.kim2kie.com/3_ach/FeView/FeView.php'))
 
         self.btn_node_label.triggered.connect(self.nodelebels)
-        self.actionNode_Label.triggered.connect(self.nodelebels)
 
         self.btn_node_cord.triggered.connect(self.nodecoordinates)
-        self.actionNode_Coordinate.triggered.connect(self.nodecoordinates)
         self.btn_load.triggered.connect(self.pointload_show)
-        self.actionLoad.triggered.connect(self.pointload_show)
 
-        self.actionExit.triggered.connect(self.close)
         self.btn_close.triggered.connect(self.close)
         self.actionMesh_Fiew.triggered.connect(self.mesh_view_model)
         self.actionSmooth_View.triggered.connect(self.smoth_view_model)
@@ -1450,7 +1352,7 @@ class FeViewMain(QtWidgets.QMainWindow):
     # function to open input file with editor
     def edit_TCL(self):
         try:
-            programName = "notepad.exe"
+            programName = "CypressEditor/CypressEditor.exe"
             sp.Popen([programName, self.fileName],cwd=self.file_path)
         except:
             QMessageBox.critical(self, "Error", "Please check OpenSees TCL input file")
