@@ -1,8 +1,8 @@
-from PyQt5.QtWidgets import *
-from PyQt5 import QtCore
-from matplotlib.backends.backend_qt5agg import FigureCanvas
+from PySide6.QtWidgets import *
+from PySide6 import QtCore
+from matplotlib.backends.backend_qtagg import FigureCanvas
 from matplotlib.figure import Figure
-from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
+from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
 class RespspectraWidget(QWidget):
 
     def __init__(self, parent=None):
