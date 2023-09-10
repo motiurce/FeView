@@ -1,3 +1,4 @@
+# 이 파일이 메인파일로 현재 수정중임. - 이걸 분석해서 남들이 어떻게 인터페이스를 구성하는지 공부하자.
 import cp as cp
 from PySide6 import QtWidgets, QtCore, Qt
 from PySide6.QtGui import (

@@ -1,3 +1,4 @@
+# 코드 테스트용 임시파일
 import sys
 from PySide6 import QtWidgets
 from UI.StaticResponseWindows import Ui_MainWindow as hkm
